@@ -41,7 +41,8 @@ description:
 
 //'dial': 4.collect{ arg chan; ('midiMsgType': 'cc', 'type': 'dial', 'midiChan': chan, 'midiNum':  4,'spec': 'midiCC') }
 //'dial': ('midiMsgType': 'cc', 'type': 'button', 'midiChan': 0, 'midiNum':  1,'spec': 'midiCC'),
-'dial': 4.collect{ arg chan; 4.collect{ arg num; ('midiMsgType': 'cc', 'type': 'dial', 'midiChan': chan, 'midiNum': num, 'spec': 'midiCC')}}
+// 4 elements 0..3 collect 4 (1..4) (working with factory settings ~ better with absolut settings)
+'dial': 4.collect{ arg chan; (1..4).collect{ arg num; ('midiMsgType': 'cc', 'type': 'dial', 'midiChan': chan, 'midiNum': num, 'spec': 'midiCC')}}
 ,
 
 'move' :
